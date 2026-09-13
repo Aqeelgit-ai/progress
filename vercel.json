@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/betterme",
+      "destination": "/betterme.html"
+    }
+  ]
+}
