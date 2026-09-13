@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#061528">
+	<title>BetterMe | Discipline Dashboard</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="sidebar">
+			<div class="brand"><div class="brand-mark"></div><div class="brand-name">BetterMe</div><div class="brand-sub">Discipline Today<br>A Greater Tomorrow</div></div>
+			<nav class="nav" aria-label="Main navigation">
+				<button class="nav-btn active" data-view="home-view"><span class="nav-icon">⌂</span><span class="nav-label">Dashboard</span></button>
+				<button class="nav-btn" data-view="progress-view"><span class="nav-icon">☑</span><span class="nav-label">Progress</span></button>
+			</nav>
+			<div class="sidebar-quote">“Weakness is a choice. I stop choosing it.”<br><small>— AQEEL</small></div>
+		</aside>
+		<main class="main">
+			<header class="topbar"><div><div class="eyebrow">Three-month sprint</div><h1>Good morning, Aqeel 👋</h1><p class="subheading">Small actions today. A better you tomorrow.</p></div><div class="date-chip" id="date-chip"></div></header>
+			<section id="home-view" class="view active">
+				<div class="grid-home">
+					<div>
+						<section class="panel hero-panel"><div class="hero-topline"><span class="hero-kicker">90 DAY RESET</span><span class="hero-status"><i></i> Day one starts now</span></div><h2>Make today count. <span>Then do it again.</span></h2><p class="hero-copy">Your goals are big, but the next move is simple: choose one habit, mark it done, and let the record build your future.</p><div class="hero-meter"><div><span>Today's momentum</span><strong id="hero-progress">0%</strong></div><div class="hero-meter-track"><span id="hero-meter-fill"></span></div></div><div class="button-row"><button class="primary-btn" id="open-progress">Open progress dashboard →</button><button class="ghost-btn" id="scroll-goals">Review goals</button></div></section>
+						<div class="stats-grid"><div class="panel stat"><div class="stat-label">Habits completed today</div><div class="stat-value"><span id="done-stat">0</span> <small>/ <span id="habit-total">16</span></small></div></div><div class="panel stat"><div class="stat-label">Points earned today</div><div class="stat-value"><span id="point-stat">0</span> <small>pts</small></div></div><div class="panel stat"><div class="stat-label">This week's points</div><div class="stat-value" id="week-stat">0 pts</div></div></div>
+						<section class="panel panel-pad" style="margin-top:18px" id="goals-panel"><div class="section-heading"><div><h2>Main goals</h2><p>The outcomes you are working toward over the next 3 months.</p></div><span class="eyebrow" style="margin:0">4 targets</span></div><div id="goal-list" class="goal-list"></div></section>
+					</div>
+					<div class="side-stack"><section class="panel panel-pad quote-panel"><div class="quote-mark">“</div> If you are doing something else instead of studying, you are making your goal wait longer. It is the <span style="color:var(--mint)">opportunity cost</span> — every choice has a cost.</section><section class="panel panel-pad"><div class="section-heading"><div><h2>Next milestones</h2><p>Keep the next marker in sight.</p></div></div><div class="milestone"><div class="milestone-date">DAY 30</div><div><div class="milestone-name">Resume first quarter checkpoint</div><div class="milestone-desc">Complete the first quarter of your resume.</div></div></div><div class="milestone"><div class="milestone-date">DAY 60</div><div><div class="milestone-name">Course and C++ checkpoint</div><div class="milestone-desc">Review, ship, and strengthen.</div></div></div><div class="milestone"><div class="milestone-date">DAY 90</div><div><div class="milestone-name">90 day reflection</div><div class="milestone-desc">Measure the person you became.</div></div></div></section></div>
+				</div>
+			</section>
+			<section id="progress-view" class="view">
+				<div class="progress-layout"><div class="progress-main"><section class="panel panel-pad"><div class="section-heading"><div><h2>▥ &nbsp;Your Progress</h2><p>Consistency compounds. Keep going!</p></div><div class="kpi-line"><span>Total Points</span>&nbsp; <strong id="total-points">0 / 310</strong></div></div><div class="chart-wrap"><canvas id="progress-chart"></canvas></div></section><section class="panel panel-pad"><div class="section-heading"><div><h2>▣ &nbsp;Today's Habits & Goals</h2><p id="completed-count">0 / 16 completed <span style="color:var(--mint);margin-left:8px" id="progress-percent">0%</span></p></div><button class="add-task" id="add-task">＋ Add Task</button></div><table class="habit-table"><thead><tr><th></th><th>Habit / Task</th><th>Points</th><th>Status</th></tr></thead><tbody id="habit-body"></tbody></table></section><div class="quick-cards"><div class="panel quick-card"><div class="quick-icon">♜</div><div><div class="quick-label">Best Streak</div><div class="quick-value" id="best-streak">0 Days</div></div></div><div class="panel quick-card"><div class="quick-icon" style="color:var(--coral)">♨</div><div><div class="quick-label">Current Streak</div><div class="quick-value" id="current-streak">0 Days</div></div></div><div class="panel quick-card"><div class="quick-icon" style="color:var(--cyan)">▥</div><div><div class="quick-label">Total Points (This Week)</div><div class="quick-value" id="week-stat">0 pts</div></div></div></div></div><div class="progress-side"><section class="panel panel-pad"><div class="section-heading"><h2>◉ &nbsp;90 Day Journey</h2><strong id="journey-day" style="color:var(--mint);font-size:12px">Day 1 / 90</strong></div><div class="journey-line"><span></span></div><div class="journey-points"><div><strong>Day 1</strong>The Start</div><div><strong>Day 45</strong>Halfway There</div><div><strong>Day 90</strong>A New You</div></div><div class="info-note">⚑ You have made the first step. Keep going — your future self is already proud.</div></section><section class="panel panel-pad quote-panel"><h2 style="font-style:normal;font-size:16px;margin-bottom:14px">❝ &nbsp;Motivation for Today</h2><div class="milestone">“ Weakness is a choice. I stop choosing it.</div><div class="milestone">“ Discipline is doing what you should do, not what you feel like doing.</div><div class="milestone">“ Comfort gives you pleasure now but discipline gives you freedom later.</div></section><section class="panel panel-pad"><div class="section-heading"><h2>□ &nbsp;90 Day Calendar</h2><div class="legend"><span><i></i>Done</span><span><i class="partial"></i>Partial</span><span><i class="missed"></i>Missed</span></div></div><div class="calendar-grid" id="calendar"></div><p class="info-note">Today is <span id="today-date"></span>. Your history stays saved in this browser for the full 90-day journey.</p></section></div></div>
+			</section>
+		</main>
+	</div>
+	<div class="toast" id="toast"></div>
+	<script src="app.js"></script>
+</body>
+</html>
